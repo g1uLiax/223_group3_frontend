@@ -41,7 +41,7 @@ const Login = () => {
         if (
           (typeof error.response !== 'undefined' &&
             error.response.status === 401) ||
-          error.response.status === 403
+          error.response === 403
         ) {
           alert('invalid login');
         } else {
