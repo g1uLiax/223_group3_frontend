@@ -1,0 +1,18 @@
+
+on:
+  push
+  
+jobs:
+  upload_server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run script on remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 2222
+          script: |
+            bash script.sh
+  
