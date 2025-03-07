@@ -1,3 +1,4 @@
+name: push new frontend version
 
 on:
   push
@@ -19,7 +20,7 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/frontend223:latest
-          
+
       - name: run script on remote server
         uses: appleboy/ssh-action@master
         with:
